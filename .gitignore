@@ -1,0 +1,15 @@
+env
+/dist
+.Makefile.swo
+brain_games/.idea/
+.idea/
+.Makefile.swo
+.gitignore.swp
+*.egg-info
+__pycache__
+*.pyc
+.venv/
+.coverage
+coverage.xml
+.pytest_cache/
+.vim
