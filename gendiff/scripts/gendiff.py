@@ -1,8 +1,8 @@
-from gendiff import parser
+from gendiff import gendiff
 
 
 def main():
-    return parser.parser
+    return gendiff.generate_diff
 
 
 if __name__ == '__main__':
