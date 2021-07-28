@@ -24,7 +24,7 @@ def generate_diff(file1, file2):
     for key in all_keys:
 
         if key in new_keys:
-            diff_result['+ ' + key] = data2.get(key)
+            diff_result['* ' + key] = data2.get(key)
         elif key in removed_keys:
             diff_result['- ' + key] = data1.get(key)
         else:
