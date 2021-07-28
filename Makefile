@@ -8,6 +8,9 @@ uninstall:
 build:
 	poetry build
 
+make lint:
+	poetry run flake8 gendiff
+
 publish:
 	poetry publish --dry-run
 
