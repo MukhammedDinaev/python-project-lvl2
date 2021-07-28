@@ -4,7 +4,6 @@ install:
 uninstall:
 	pip uninstall hexlet-code
 
-
 build:
 	poetry build
 
