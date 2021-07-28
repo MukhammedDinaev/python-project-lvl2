@@ -25,4 +25,4 @@ jobs:
         pip install poetry
         poetry install
     - name: run linter
-      run: poetry run flake8 brain_games
+      run: poetry run flake8 gendiff
