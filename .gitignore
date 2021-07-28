@@ -13,3 +13,4 @@ __pycache__
 coverage.xml
 .pytest_cache/
 .vim
+.swp
