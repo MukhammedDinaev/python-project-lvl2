@@ -26,3 +26,5 @@ jobs:
         poetry install
     - name: run linter
       run: poetry run flake8 gendiff
+    - name: pytest
+      run: poetry run pytest
