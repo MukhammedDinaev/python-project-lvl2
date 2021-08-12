@@ -1,13 +1,4 @@
-import argparse
 import json
-
-
-parser = argparse.ArgumentParser(description='Generate diff')
-parser.add_argument('first_file')
-parser.add_argument('second_file')
-parser.add_argument('-f', '--format', help='set format of output')
-
-args = parser.parse_args()
 
 
 def generate_diff(file1, file2):
@@ -35,7 +26,4 @@ def generate_diff(file1, file2):
                 diff_result['+ ' + key] = data2.get(key)
 
     output = json.dumps(diff_result, indent=4).replace('"', '').replace(',', '')
-    print(output)
-
-
-generate_diff(args.first_file, args.second_file)
+    return output
