@@ -1,8 +1,8 @@
-from gendiff import gendiff_args
+from gendiff import engine
 
 
 def main():
-    return gendiff_args.generate_diff
+    return engine
 
 
 if __name__ == '__main__':

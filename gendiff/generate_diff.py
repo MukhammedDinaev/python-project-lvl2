@@ -1,9 +1,4 @@
-import json
-
-
-def generate_diff(file1, file2):
-    data1 = json.load(open(file1))
-    data2 = json.load(open(file2))
+def generate_diff(data1, data2):
     keys_data1 = set(data1.keys())
     keys_data2 = set(data2.keys())
 
@@ -25,5 +20,4 @@ def generate_diff(file1, file2):
                 diff_result['- ' + key] = data1.get(key)
                 diff_result['+ ' + key] = data2.get(key)
 
-    output = json.dumps(diff_result, indent=4).replace('"', '').replace(',', '')
-    return output
+    return diff_result

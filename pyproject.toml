@@ -14,6 +14,7 @@ gendiff = "gendiff.scripts.gendiff_script:main"
 python = "^3.8"
 flake8 = "^3.9.2"
 pytest = "^6.2.4"
+PyYAML = "^5.4.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
