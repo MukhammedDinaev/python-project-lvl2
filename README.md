@@ -1,3 +1,5 @@
+[![asciicast](https://asciinema.org/a/USv8irk5HSl1nYO28jJtPE7Iw.svg)](https://asciinema.org/a/USv8irk5HSl1nYO28jJtPE7Iw)
+[![asciicast](https://asciinema.org/a/430999.svg)](https://asciinema.org/a/430999)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MukhammedDinaev/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/MukhammedDinaev/python-project-lvl2/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/90ad67de40a5d3ae7b8d/maintainability)](https://codeclimate.com/github/MukhammedDinaev/python-project-lvl2/maintainability)
