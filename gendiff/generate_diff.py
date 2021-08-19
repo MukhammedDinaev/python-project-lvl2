@@ -7,15 +7,17 @@ def generate_diff(data1, data2):
     common_keys = keys_data1 & keys_data2
     all_keys = sorted(new_keys | removed_keys | common_keys)
     diff_result = {}
-    for key in all_keys:
 
+    for key in all_keys:
         if key in new_keys:
             diff_result['+ ' + key] = data2.get(key)
         elif key in removed_keys:
             diff_result['- ' + key] = data1.get(key)
-        else:
-            if data1[key] == data2[key]:
-                diff_result['  ' + key] = data1.get(key)
+        elif key in common_keys:
+            if type(data1[key]) == dict and type(data2[key]) == dict:
+                diff_result[key] = generate_diff(data1[key], data2[key])
+            elif data1[key] == data2[key]:
+                diff_result[key] = data1.get(key)
             else:
                 diff_result['- ' + key] = data1.get(key)
                 diff_result['+ ' + key] = data2.get(key)

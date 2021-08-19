@@ -17,4 +17,6 @@ def run_diff(first_arg, second_arg):
 
     result_diff = generate_diff.generate_diff(data1, data2)
     output = json.dumps(result_diff, indent=4).replace('"', '').replace(',', '')
+    output = output.replace('  +', '+').replace('  -', '-')
+    print(output)
     return output

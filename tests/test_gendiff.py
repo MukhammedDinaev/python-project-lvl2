@@ -23,3 +23,9 @@ def test2_yaml():
     answer = open('./tests/fixtures/answer2.txt').read().rstrip()
     result = engine.run_diff('tests/fixtures/file3.yaml', 'tests/fixtures/file4.yaml')
     assert result == answer
+
+
+def test1_treejson():
+    answer = open('./tests/fixtures/answer3.txt').read().rstrip()
+    result = engine.run_diff('tests/fixtures/filetree1.json', 'tests/fixtures/filetree2.json')
+    assert result == answer
