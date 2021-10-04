@@ -25,7 +25,25 @@ def test2_yaml():
     assert result == answer
 
 
-def test1_treejson():
+def test1_tree_json():
     answer = open('./tests/fixtures/answer3.txt').read().rstrip()
     result = engine.run_diff('tests/fixtures/filetree1.json', 'tests/fixtures/filetree2.json')
+    assert result == answer
+
+
+def test1_tree_yaml():
+    answer = open('./tests/fixtures/answer3.txt').read().rstrip()
+    result = engine.run_diff('tests/fixtures/filetree1.yaml', 'tests/fixtures/filetree2.yaml')
+    assert result == answer
+
+
+def test2_tree_json():
+    answer = open('./tests/fixtures/answer4.txt').read().rstrip()
+    result = engine.run_diff('tests/fixtures/filetree1.json', 'tests/fixtures/filetree2.json', 'plain')
+    assert result == answer
+
+
+def test2_tree_yaml():
+    answer = open('./tests/fixtures/answer4.txt').read().rstrip()
+    result = engine.run_diff('tests/fixtures/filetree1.yaml', 'tests/fixtures/filetree2.yaml', 'plain')
     assert result == answer
