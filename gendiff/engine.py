@@ -20,12 +20,13 @@ def run_diff(first_arg, second_arg, format_style=None):
 
     if format_style == 'plain':
         output = plain_style.make_plain_stile(result_diff)
-        print(output)
         return output
+
+    elif format_style == 'json':
+        return result_diff
 
     else:
         output = custom_style.make_custom_style(result_diff)
         output = json.dumps(output, indent=4).replace('"', '').replace(',', '')
         output = output.replace('  +', '+').replace('  -', '-')
-        print(output)
         return output
