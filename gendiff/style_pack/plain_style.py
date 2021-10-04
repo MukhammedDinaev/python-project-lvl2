@@ -25,7 +25,8 @@ def make_plain_stile(diff_data, path='', result=None):
             if is_in_group(diff_data['added'], key):
                 path1 = path + key
                 value = get_value(diff_data['added'][key])
-                result.append('Property \'{}\' was added with value: {}'.format(path1, value))
+                result.append('Property \'{}\' was added with '
+                              'value: {}'.format(path1, value))
             elif is_in_group(diff_data['removed'], key):
                 path1 = path + key
                 result.append('Property \'{}\' was removed'.format(path1))
@@ -33,7 +34,9 @@ def make_plain_stile(diff_data, path='', result=None):
                 path1 = path + key
                 old_value = get_value(diff_data['updated']['old_value'][key])
                 new_value = get_value(diff_data['updated']['new_value'][key])
-                result.append('Property \'{}\' was updated. From {} to {}'.format(path1, old_value, new_value))
+                result.append('Property \'{}\' was updated. From {} '
+                              'to {}'.format(path1, old_value, new_value))
             elif is_in_group(diff_data['nested'], key):
-                make_plain_stile(diff_data['nested'][key], path + key + '.', result)
+                make_plain_stile(diff_data['nested']
+                                 [key], path + key + '.', result)
     return '\n'.join(result)

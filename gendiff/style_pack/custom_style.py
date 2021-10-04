@@ -1,6 +1,3 @@
-import json
-
-
 def make_custom_style(diff_data):
     all_keys = diff_data['all_keys']
     output = {}
@@ -21,4 +18,3 @@ def make_custom_style(diff_data):
             elif key in diff_data['same']:
                 output[key] = diff_data['same'][key]
     return output
-
