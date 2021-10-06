@@ -25,10 +25,3 @@ jobs:
         uses: hexlet/project-action@release
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
-      - name: run poetry
-        run: |
-          pip install poetry
-          make install
-      - name: run linter
-        run: |
-          make lint
