@@ -1,1 +1,0 @@
-run gendiff --format json filetree1.yaml filetree2.yaml
