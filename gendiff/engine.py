@@ -22,7 +22,10 @@ def generate_diff(first_arg, second_arg, format_style=None):
         return output
 
     elif format_style == 'json':
-        return result_diff
+        return json.dumps(result_diff)
+
+    elif format_style == 'yaml' or format_style == 'yml':
+        return yaml.dump(result_diff)
 
     else:
         output = custom_style.make_custom_style(result_diff)
