@@ -1,4 +1,37 @@
-def generate_diff(data1, data2):
+from gendiff.style_pack import plain_style, custom_style
+import json
+import yaml
+
+
+def get_data(arg):
+    if arg.endswith('.json'):
+        return json.load(open(arg, 'r'))
+    elif arg.endswith('.yaml') or arg.endswith('.yml'):
+        return yaml.load(open(arg, 'r'), Loader=yaml.SafeLoader)
+
+
+def generate_diff(first_arg, second_arg, format_style=None):
+
+    data1 = get_data(first_arg)
+    data2 = get_data(second_arg)
+
+    result_diff = get_diff(data1, data2)
+
+    if format_style == 'plain':
+        output = plain_style.make_plain_stile(result_diff)
+        return output
+
+    elif format_style == 'json':
+        return result_diff
+
+    else:
+        output = custom_style.make_custom_style(result_diff)
+        output = json.dumps(output, indent=4).replace('"', '').replace(',', '')
+        output = output.replace('  +', '+').replace('  -', '-')
+        return output
+
+
+def get_diff(data1, data2):
     keys_data1 = set(data1.keys())
     keys_data2 = set(data2.keys())
 
@@ -26,7 +59,7 @@ def generate_diff(data1, data2):
             if type(data1[key]) == dict and type(data2[key]) == dict:
                 key1 = data1[key]
                 key2 = data2[key]
-                diff_result['nested'].update({key: generate_diff(key1, key2)})
+                diff_result['nested'].update({key: get_diff(key1, key2)})
 
             elif data1[key] == data2[key]:
                 diff_result['same'].update({key: data1.get(key)})
