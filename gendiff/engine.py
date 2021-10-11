@@ -31,7 +31,7 @@ def generate_diff(first_arg, second_arg, format_style=None):
         output = custom_style.make_custom_style(result_diff)
         output = json.dumps(output, indent=4).replace('"', '').replace(',', '')
         output = output.replace('  +', '+').replace('  -', '-')
-        return output + '\n'
+        return '\n' + output + '\n'
 
 
 def get_diff(data1, data2):
