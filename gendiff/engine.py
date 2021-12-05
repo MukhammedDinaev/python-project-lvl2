@@ -25,14 +25,15 @@ def generate_diff(first_arg, second_arg, format_style=None):
         return json.dumps(result_diff)
 
     elif format_style == 'yaml' or format_style == 'yml':
-        return yaml.dump(result_diff)
+        result = yaml.dump(result_diff)
+        return result
 
     else:
         output = custom_style.make_custom_style(result_diff)
         output = json.dumps(output, indent=4)
         output = output.replace('"', '').replace(',', '')
         output = output.replace('  +', '+').replace('  -', '-')
-        return output + '\n'
+        return output
 
 
 def get_diff(data1, data2):
