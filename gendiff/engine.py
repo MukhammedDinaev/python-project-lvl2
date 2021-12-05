@@ -19,7 +19,7 @@ def generate_diff(first_arg, second_arg, format_style=None):
 
     if format_style == 'plain':
         output = plain_style.make_plain_stile(result_diff)
-        return output + '\n'
+        return output
 
     elif format_style == 'json':
         return json.dumps(result_diff)

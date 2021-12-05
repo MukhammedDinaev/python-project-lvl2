@@ -38,13 +38,13 @@ def test1_tree_yaml():
 
 
 def test2_tree_json():
-    answer = open('./tests/fixtures/answer4.txt').read()
+    answer = open('./tests/fixtures/answer4.txt').read().rstrip()
     result = generate_diff('tests/fixtures/filetree1.json', 'tests/fixtures/filetree2.json', 'plain')
     assert result == answer
 
 
 def test2_tree_yaml():
-    answer = open('./tests/fixtures/answer4.txt').read()
+    answer = open('./tests/fixtures/answer4.txt').read().rstrip()
     result = generate_diff('tests/fixtures/filetree1.yaml', 'tests/fixtures/filetree2.yaml', 'plain')
     assert result == answer
 
