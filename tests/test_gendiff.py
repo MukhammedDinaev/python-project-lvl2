@@ -48,9 +48,10 @@ def test2_tree_yaml():
     result = generate_diff('tests/fixtures/filetree1.yaml', 'tests/fixtures/filetree2.yaml', 'plain')
     assert result == answer
 
-'''
-def test1_treeyaml():
-    answer = open('./tests/fixtures/answer3.txt').read()
-    result = generate_diff('tests/fixtures/filetree1.yaml', 'tests/fixtures/filetree2.yaml', 'yaml')
+
+def test_cli_yaml():
+    answer = open('./tests/fixtures/result_stylish').read()
+    print(answer)
+    result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml')
+    print(result)
     assert result == answer
-'''
